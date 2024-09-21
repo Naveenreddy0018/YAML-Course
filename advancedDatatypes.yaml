@@ -1,0 +1,101 @@
+#Sequence datatype
+student: !!seq
+ - marks
+ - name
+ - roll_no
+
+#Sequence datatype can also be written like this
+cities: [New Delhi, Mumbai]
+
+#Some of the keys of sequence will be empty. For this we have a concept called Sparse Sequence
+
+#Sparse Sequence
+sparse seq: 
+ - hey
+ - how
+ -
+ - Null
+ - sup
+
+#Nested sequence
+-
+ - mango
+ - apple
+ - banana
+-
+ - marks
+ - roll no
+ - date
+
+#Maps - Key: value pairs are called Maps
+person: !!map
+  name: Naveen 
+  age: 22
+  city: Kadapa
+
+#Nested maps: map within a map
+name: Naveen
+role:
+  age: 78
+  job: Student
+
+#same as
+name: Naveen
+role: {age: 78, job: Student}
+
+
+#Pairs: keys may have duplicate values
+#!!pairs
+pair example: !!pairs
+ - job: student
+ - job: teacher
+#This will be an array of hashtables like ["job", "student"], ["job", "teacher"]
+
+#same as
+pair example: !!pairs [job: student, job: teacher]
+
+
+#Set - !!set will allow you to have unique values
+names: !!set 
+ ? Naveen
+ ? Suhail
+ ? Karthik
+
+
+# Dictionary - !!omap
+people: !!omap
+  - Naveen:
+     name: Naveen Kumar
+     age: 22
+     height: 678
+  - Karthik:
+     name: Karthik Reddy
+     age: 23
+     height: 700
+
+
+
+#Reusing some properties using anchors
+likings: &likes       #We are creating likes variable to use it multiple times with &
+  fav fruit: mango
+  dislikes: grapes
+
+person1:
+  name: Naveen Reddy
+  <<: *likes          # To access those data we are using this thing.
+
+person2:
+  name: Karthik Reddy
+  <<: *likes
+
+person3:
+  name: Suhail
+  <<: *likes 
+  dislikes: berries   # We can change the dislikes to change the data
+
+#This will look like
+person3:
+  name: Suhail
+  dislikes: berries
+
+# In this way we can override the data

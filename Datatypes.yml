@@ -1,0 +1,83 @@
+#int datatype
+number: 7878
+
+#Float datatype
+marks: 98.76
+
+# Boolean datatype
+booleanValue: No #n, N, false, False, FALSE
+#same for true
+
+
+#String datatype
+Name: Chinthakunta Naveen Kumar Reddy
+Name: "Chinthakunta Naveen Kumar Reddy"
+Name: 'Chinthakunta Naveen Kumar Reddy'
+
+
+#Specifying the datatype
+#int
+zero: !!int 0
+positiveNum: !!int +45
+negativeNum: !!int -45
+binaryNum: !!int 0b11001
+octalNum: !!int 06574
+hexa: !!int 0x45
+commaValue: !!int +540_000 # 540,000
+exponential number: 6.023E56
+
+#float
+marks: !!float 56.89
+infinite: !!float .inf
+not a num: .nan
+
+#boolean
+boolValue: !!bool No
+
+#String
+info: !!str This is a String.
+
+#null
+surname: !!null Null # or null NULL, ~
+~: this is a null key
+
+#Date and time
+date: !!timestamp 2024-09-20
+india time: 2024-09-20T23:21:50.10 +5:30
+no time zone: 2024-09-20T23:21:50.10
+
+#Storing data in multiple lines
+bio: |
+Hey, My name is Naveen.
+I'm a very nice dude.
+
+
+#Write a single line in multiple lines
+message: >
+This will 
+all be 
+in one single line
+# This will look as -> message: This will all be in one single line
+
+
+#Key DataType
+"apple" : "I'm a red fruit"
+1: "This is Naveen's roll no"
+--- #This is to specify a seperate document
+#List DataType
+- apple
+- mango
+- banana
+- Apple
+---
+#Block Style DataType
+cities:
+ - New Delhi
+ - Mumbai
+ - Gujarat
+---
+cities: [New Delhi, Mumbai] #Writing in one line
+---
+{mango: "yellow fruit", age: 56}
+... #Specifies the end of the document.
+

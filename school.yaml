@@ -1,0 +1,20 @@
+---
+#My Version
+School: !!omap
+  Name: "DPS"
+  Principal: "Someone"
+  Students: !!map
+    Student1: !!map
+      rno: 25
+      Name: "Naveen"
+      Marks: 93
+
+---
+#Kunal's Code
+School:
+- name: DPS
+  principal: Someone
+  Students:
+  - rno: 12
+    name: Naveen
+    marks: 67
